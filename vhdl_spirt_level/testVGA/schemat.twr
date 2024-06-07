@@ -1,0 +1,1038 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml schemat.twx schemat.ncd -o schemat.twr schemat.pcf
+
+Design file:              schemat.ncd
+Physical constraint file: schemat.pcf
+Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 11321785 paths analyzed, 839 endpoints analyzed, 3 failing endpoints
+ 3 timing errors detected. (3 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  21.096ns.
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_11/VGA_Red (SLICE_X25Y51.SR), 3716621 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.096ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_11/v_count_1 (FF)
+  Destination:          XLXI_11/VGA_Red (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      21.096ns (Levels of Logic = 18)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_11/v_count_1 to XLXI_11/VGA_Red
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y30.YQ      Tcko                  0.587   XLXI_11/v_count<0>
+                                                       XLXI_11/v_count_1
+    SLICE_X21Y30.G1      net (fanout=9)        1.203   XLXI_11/v_count<1>
+    SLICE_X21Y30.COUT    Topcyg                1.001   XLXI_11/_sub0001<0>
+                                                       XLXI_11/Msub__sub0001_lut<1>
+                                                       XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.Y       Tciny                 0.869   XLXI_11/_sub0001<2>
+                                                       XLXI_11/Msub__sub0001_cy<2>
+                                                       XLXI_11/Msub__sub0001_xor<3>
+    SLICE_X20Y31.G1      net (fanout=1)        0.122   XLXI_11/_sub0001<3>
+    SLICE_X20Y31.COUT    Topcyg                1.131   XLXI_11/mult0003_addsub0000<2>
+                                                       XLXI_11/_sub0001<3>_rt
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.COUT    Tbyp                  0.130   XLXI_11/mult0003_addsub0000<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.Y       Tciny                 0.883   XLXI_11/mult0003_addsub0000<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_xor<7>
+    MULT18X18_X0Y4.B7    net (fanout=2)        1.562   XLXI_11/mult0003_addsub0000<7>
+    MULT18X18_X0Y4.P10   Tmult                 4.602   XLXI_11/Mmult__mult0003
+                                                       XLXI_11/Mmult__mult0003
+    SLICE_X13Y41.F3      net (fanout=1)        1.294   XLXI_11/_mult0003<10>
+    SLICE_X13Y41.COUT    Topcyf                1.162   XLXI_11/VGA_Green_add0001<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_lut<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.Y       Tciny                 0.869   XLXI_11/VGA_Green_add0001<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_xor<27>
+    SLICE_X12Y50.G3      net (fanout=1)        0.310   XLXI_11/VGA_Green_add0001<27>
+    SLICE_X12Y50.COUT    Topcyg                1.131   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_lut<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.CIN     net (fanout=1)        0.000   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.COUT    Tbyp                  0.130   XLXI_11/VGA_Green_cmp_le0000
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<10>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<11>
+    SLICE_X24Y51.F3      net (fanout=3)        1.331   XLXI_11/VGA_Green_cmp_le0000
+    SLICE_X24Y51.X       Tilo                  0.759   XLXI_11/VGA_Red_or0000
+                                                       XLXI_11/VGA_Red_or00001
+    SLICE_X25Y51.SR      net (fanout=1)        0.284   XLXI_11/VGA_Red_or0000
+    SLICE_X25Y51.CLK     Tsrck                 0.910   XLXI_11/VGA_Red
+                                                       XLXI_11/VGA_Red
+    -------------------------------------------------  ---------------------------
+    Total                                     21.096ns (14.990ns logic, 6.106ns route)
+                                                       (71.1% logic, 28.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.072ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_11/v_count_1 (FF)
+  Destination:          XLXI_11/VGA_Red (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      21.072ns (Levels of Logic = 18)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_11/v_count_1 to XLXI_11/VGA_Red
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y30.YQ      Tcko                  0.587   XLXI_11/v_count<0>
+                                                       XLXI_11/v_count_1
+    SLICE_X21Y30.G1      net (fanout=9)        1.203   XLXI_11/v_count<1>
+    SLICE_X21Y30.COUT    Topcyg                1.001   XLXI_11/_sub0001<0>
+                                                       XLXI_11/Msub__sub0001_lut<1>
+                                                       XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.COUT    Tbyp                  0.118   XLXI_11/_sub0001<2>
+                                                       XLXI_11/Msub__sub0001_cy<2>
+                                                       XLXI_11/Msub__sub0001_cy<3>
+    SLICE_X21Y32.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<3>
+    SLICE_X21Y32.Y       Tciny                 0.869   XLXI_11/_sub0001<4>
+                                                       XLXI_11/Msub__sub0001_cy<4>
+                                                       XLXI_11/Msub__sub0001_xor<5>
+    SLICE_X20Y32.G2      net (fanout=1)        0.110   XLXI_11/_sub0001<5>
+    SLICE_X20Y32.COUT    Topcyg                1.131   XLXI_11/mult0003_addsub0000<4>
+                                                       XLXI_11/_sub0001<5>_rt
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.Y       Tciny                 0.883   XLXI_11/mult0003_addsub0000<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_xor<7>
+    MULT18X18_X0Y4.B7    net (fanout=2)        1.562   XLXI_11/mult0003_addsub0000<7>
+    MULT18X18_X0Y4.P10   Tmult                 4.602   XLXI_11/Mmult__mult0003
+                                                       XLXI_11/Mmult__mult0003
+    SLICE_X13Y41.F3      net (fanout=1)        1.294   XLXI_11/_mult0003<10>
+    SLICE_X13Y41.COUT    Topcyf                1.162   XLXI_11/VGA_Green_add0001<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_lut<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.Y       Tciny                 0.869   XLXI_11/VGA_Green_add0001<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_xor<27>
+    SLICE_X12Y50.G3      net (fanout=1)        0.310   XLXI_11/VGA_Green_add0001<27>
+    SLICE_X12Y50.COUT    Topcyg                1.131   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_lut<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.CIN     net (fanout=1)        0.000   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.COUT    Tbyp                  0.130   XLXI_11/VGA_Green_cmp_le0000
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<10>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<11>
+    SLICE_X24Y51.F3      net (fanout=3)        1.331   XLXI_11/VGA_Green_cmp_le0000
+    SLICE_X24Y51.X       Tilo                  0.759   XLXI_11/VGA_Red_or0000
+                                                       XLXI_11/VGA_Red_or00001
+    SLICE_X25Y51.SR      net (fanout=1)        0.284   XLXI_11/VGA_Red_or0000
+    SLICE_X25Y51.CLK     Tsrck                 0.910   XLXI_11/VGA_Red
+                                                       XLXI_11/VGA_Red
+    -------------------------------------------------  ---------------------------
+    Total                                     21.072ns (14.978ns logic, 6.094ns route)
+                                                       (71.1% logic, 28.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.025ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_11/v_count_1 (FF)
+  Destination:          XLXI_11/VGA_Red (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      21.025ns (Levels of Logic = 17)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_11/v_count_1 to XLXI_11/VGA_Red
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y30.YQ      Tcko                  0.587   XLXI_11/v_count<0>
+                                                       XLXI_11/v_count_1
+    SLICE_X21Y30.G1      net (fanout=9)        1.203   XLXI_11/v_count<1>
+    SLICE_X21Y30.COUT    Topcyg                1.001   XLXI_11/_sub0001<0>
+                                                       XLXI_11/Msub__sub0001_lut<1>
+                                                       XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.Y       Tciny                 0.869   XLXI_11/_sub0001<2>
+                                                       XLXI_11/Msub__sub0001_cy<2>
+                                                       XLXI_11/Msub__sub0001_xor<3>
+    SLICE_X20Y31.G1      net (fanout=1)        0.122   XLXI_11/_sub0001<3>
+    SLICE_X20Y31.COUT    Topcyg                1.131   XLXI_11/mult0003_addsub0000<2>
+                                                       XLXI_11/_sub0001<3>_rt
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.COUT    Tbyp                  0.130   XLXI_11/mult0003_addsub0000<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.Y       Tciny                 0.883   XLXI_11/mult0003_addsub0000<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_xor<7>
+    MULT18X18_X0Y4.B7    net (fanout=2)        1.562   XLXI_11/mult0003_addsub0000<7>
+    MULT18X18_X0Y4.P10   Tmult                 4.602   XLXI_11/Mmult__mult0003
+                                                       XLXI_11/Mmult__mult0003
+    SLICE_X13Y41.F3      net (fanout=1)        1.294   XLXI_11/_mult0003<10>
+    SLICE_X13Y41.COUT    Topcyf                1.162   XLXI_11/VGA_Green_add0001<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_lut<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.Y       Tciny                 0.869   XLXI_11/VGA_Green_add0001<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_xor<25>
+    SLICE_X12Y50.G2      net (fanout=1)        0.357   XLXI_11/VGA_Green_add0001<25>
+    SLICE_X12Y50.COUT    Topcyg                1.131   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_lut<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.CIN     net (fanout=1)        0.000   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.COUT    Tbyp                  0.130   XLXI_11/VGA_Green_cmp_le0000
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<10>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<11>
+    SLICE_X24Y51.F3      net (fanout=3)        1.331   XLXI_11/VGA_Green_cmp_le0000
+    SLICE_X24Y51.X       Tilo                  0.759   XLXI_11/VGA_Red_or0000
+                                                       XLXI_11/VGA_Red_or00001
+    SLICE_X25Y51.SR      net (fanout=1)        0.284   XLXI_11/VGA_Red_or0000
+    SLICE_X25Y51.CLK     Tsrck                 0.910   XLXI_11/VGA_Red
+                                                       XLXI_11/VGA_Red
+    -------------------------------------------------  ---------------------------
+    Total                                     21.025ns (14.872ns logic, 6.153ns route)
+                                                       (70.7% logic, 29.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_11/VGA_Green (SLICE_X22Y50.G3), 3655504 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -0.041ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_11/v_count_1 (FF)
+  Destination:          XLXI_11/VGA_Green (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      20.041ns (Levels of Logic = 18)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_11/v_count_1 to XLXI_11/VGA_Green
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y30.YQ      Tcko                  0.587   XLXI_11/v_count<0>
+                                                       XLXI_11/v_count_1
+    SLICE_X21Y30.G1      net (fanout=9)        1.203   XLXI_11/v_count<1>
+    SLICE_X21Y30.COUT    Topcyg                1.001   XLXI_11/_sub0001<0>
+                                                       XLXI_11/Msub__sub0001_lut<1>
+                                                       XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.Y       Tciny                 0.869   XLXI_11/_sub0001<2>
+                                                       XLXI_11/Msub__sub0001_cy<2>
+                                                       XLXI_11/Msub__sub0001_xor<3>
+    SLICE_X20Y31.G1      net (fanout=1)        0.122   XLXI_11/_sub0001<3>
+    SLICE_X20Y31.COUT    Topcyg                1.131   XLXI_11/mult0003_addsub0000<2>
+                                                       XLXI_11/_sub0001<3>_rt
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.COUT    Tbyp                  0.130   XLXI_11/mult0003_addsub0000<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.Y       Tciny                 0.883   XLXI_11/mult0003_addsub0000<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_xor<7>
+    MULT18X18_X0Y4.B7    net (fanout=2)        1.562   XLXI_11/mult0003_addsub0000<7>
+    MULT18X18_X0Y4.P10   Tmult                 4.602   XLXI_11/Mmult__mult0003
+                                                       XLXI_11/Mmult__mult0003
+    SLICE_X13Y41.F3      net (fanout=1)        1.294   XLXI_11/_mult0003<10>
+    SLICE_X13Y41.COUT    Topcyf                1.162   XLXI_11/VGA_Green_add0001<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_lut<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.Y       Tciny                 0.869   XLXI_11/VGA_Green_add0001<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_xor<27>
+    SLICE_X12Y50.G3      net (fanout=1)        0.310   XLXI_11/VGA_Green_add0001<27>
+    SLICE_X12Y50.COUT    Topcyg                1.131   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_lut<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.CIN     net (fanout=1)        0.000   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.COUT    Tbyp                  0.130   XLXI_11/VGA_Green_cmp_le0000
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<10>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<11>
+    SLICE_X22Y50.G3      net (fanout=3)        1.337   XLXI_11/VGA_Green_cmp_le0000
+    SLICE_X22Y50.CLK     Tgck                  0.892   XLXI_11/VGA_Green
+                                                       XLXI_11/VGA_Green_mux00061
+                                                       XLXI_11/VGA_Green
+    -------------------------------------------------  ---------------------------
+    Total                                     20.041ns (14.213ns logic, 5.828ns route)
+                                                       (70.9% logic, 29.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -0.017ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_11/v_count_1 (FF)
+  Destination:          XLXI_11/VGA_Green (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      20.017ns (Levels of Logic = 18)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_11/v_count_1 to XLXI_11/VGA_Green
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y30.YQ      Tcko                  0.587   XLXI_11/v_count<0>
+                                                       XLXI_11/v_count_1
+    SLICE_X21Y30.G1      net (fanout=9)        1.203   XLXI_11/v_count<1>
+    SLICE_X21Y30.COUT    Topcyg                1.001   XLXI_11/_sub0001<0>
+                                                       XLXI_11/Msub__sub0001_lut<1>
+                                                       XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.COUT    Tbyp                  0.118   XLXI_11/_sub0001<2>
+                                                       XLXI_11/Msub__sub0001_cy<2>
+                                                       XLXI_11/Msub__sub0001_cy<3>
+    SLICE_X21Y32.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<3>
+    SLICE_X21Y32.Y       Tciny                 0.869   XLXI_11/_sub0001<4>
+                                                       XLXI_11/Msub__sub0001_cy<4>
+                                                       XLXI_11/Msub__sub0001_xor<5>
+    SLICE_X20Y32.G2      net (fanout=1)        0.110   XLXI_11/_sub0001<5>
+    SLICE_X20Y32.COUT    Topcyg                1.131   XLXI_11/mult0003_addsub0000<4>
+                                                       XLXI_11/_sub0001<5>_rt
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.Y       Tciny                 0.883   XLXI_11/mult0003_addsub0000<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_xor<7>
+    MULT18X18_X0Y4.B7    net (fanout=2)        1.562   XLXI_11/mult0003_addsub0000<7>
+    MULT18X18_X0Y4.P10   Tmult                 4.602   XLXI_11/Mmult__mult0003
+                                                       XLXI_11/Mmult__mult0003
+    SLICE_X13Y41.F3      net (fanout=1)        1.294   XLXI_11/_mult0003<10>
+    SLICE_X13Y41.COUT    Topcyf                1.162   XLXI_11/VGA_Green_add0001<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_lut<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.Y       Tciny                 0.869   XLXI_11/VGA_Green_add0001<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_xor<27>
+    SLICE_X12Y50.G3      net (fanout=1)        0.310   XLXI_11/VGA_Green_add0001<27>
+    SLICE_X12Y50.COUT    Topcyg                1.131   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_lut<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.CIN     net (fanout=1)        0.000   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.COUT    Tbyp                  0.130   XLXI_11/VGA_Green_cmp_le0000
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<10>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<11>
+    SLICE_X22Y50.G3      net (fanout=3)        1.337   XLXI_11/VGA_Green_cmp_le0000
+    SLICE_X22Y50.CLK     Tgck                  0.892   XLXI_11/VGA_Green
+                                                       XLXI_11/VGA_Green_mux00061
+                                                       XLXI_11/VGA_Green
+    -------------------------------------------------  ---------------------------
+    Total                                     20.017ns (14.201ns logic, 5.816ns route)
+                                                       (70.9% logic, 29.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.030ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_11/v_count_1 (FF)
+  Destination:          XLXI_11/VGA_Green (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.970ns (Levels of Logic = 17)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_11/v_count_1 to XLXI_11/VGA_Green
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y30.YQ      Tcko                  0.587   XLXI_11/v_count<0>
+                                                       XLXI_11/v_count_1
+    SLICE_X21Y30.G1      net (fanout=9)        1.203   XLXI_11/v_count<1>
+    SLICE_X21Y30.COUT    Topcyg                1.001   XLXI_11/_sub0001<0>
+                                                       XLXI_11/Msub__sub0001_lut<1>
+                                                       XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.Y       Tciny                 0.869   XLXI_11/_sub0001<2>
+                                                       XLXI_11/Msub__sub0001_cy<2>
+                                                       XLXI_11/Msub__sub0001_xor<3>
+    SLICE_X20Y31.G1      net (fanout=1)        0.122   XLXI_11/_sub0001<3>
+    SLICE_X20Y31.COUT    Topcyg                1.131   XLXI_11/mult0003_addsub0000<2>
+                                                       XLXI_11/_sub0001<3>_rt
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.COUT    Tbyp                  0.130   XLXI_11/mult0003_addsub0000<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.Y       Tciny                 0.883   XLXI_11/mult0003_addsub0000<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_xor<7>
+    MULT18X18_X0Y4.B7    net (fanout=2)        1.562   XLXI_11/mult0003_addsub0000<7>
+    MULT18X18_X0Y4.P10   Tmult                 4.602   XLXI_11/Mmult__mult0003
+                                                       XLXI_11/Mmult__mult0003
+    SLICE_X13Y41.F3      net (fanout=1)        1.294   XLXI_11/_mult0003<10>
+    SLICE_X13Y41.COUT    Topcyf                1.162   XLXI_11/VGA_Green_add0001<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_lut<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.Y       Tciny                 0.869   XLXI_11/VGA_Green_add0001<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_xor<25>
+    SLICE_X12Y50.G2      net (fanout=1)        0.357   XLXI_11/VGA_Green_add0001<25>
+    SLICE_X12Y50.COUT    Topcyg                1.131   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_lut<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.CIN     net (fanout=1)        0.000   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.COUT    Tbyp                  0.130   XLXI_11/VGA_Green_cmp_le0000
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<10>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<11>
+    SLICE_X22Y50.G3      net (fanout=3)        1.337   XLXI_11/VGA_Green_cmp_le0000
+    SLICE_X22Y50.CLK     Tgck                  0.892   XLXI_11/VGA_Green
+                                                       XLXI_11/VGA_Green_mux00061
+                                                       XLXI_11/VGA_Green
+    -------------------------------------------------  ---------------------------
+    Total                                     19.970ns (14.095ns logic, 5.875ns route)
+                                                       (70.6% logic, 29.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_11/VGA_Red (SLICE_X25Y51.G2), 3655504 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -0.034ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_11/v_count_1 (FF)
+  Destination:          XLXI_11/VGA_Red (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      20.034ns (Levels of Logic = 18)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_11/v_count_1 to XLXI_11/VGA_Red
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y30.YQ      Tcko                  0.587   XLXI_11/v_count<0>
+                                                       XLXI_11/v_count_1
+    SLICE_X21Y30.G1      net (fanout=9)        1.203   XLXI_11/v_count<1>
+    SLICE_X21Y30.COUT    Topcyg                1.001   XLXI_11/_sub0001<0>
+                                                       XLXI_11/Msub__sub0001_lut<1>
+                                                       XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.Y       Tciny                 0.869   XLXI_11/_sub0001<2>
+                                                       XLXI_11/Msub__sub0001_cy<2>
+                                                       XLXI_11/Msub__sub0001_xor<3>
+    SLICE_X20Y31.G1      net (fanout=1)        0.122   XLXI_11/_sub0001<3>
+    SLICE_X20Y31.COUT    Topcyg                1.131   XLXI_11/mult0003_addsub0000<2>
+                                                       XLXI_11/_sub0001<3>_rt
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.COUT    Tbyp                  0.130   XLXI_11/mult0003_addsub0000<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.Y       Tciny                 0.883   XLXI_11/mult0003_addsub0000<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_xor<7>
+    MULT18X18_X0Y4.B7    net (fanout=2)        1.562   XLXI_11/mult0003_addsub0000<7>
+    MULT18X18_X0Y4.P10   Tmult                 4.602   XLXI_11/Mmult__mult0003
+                                                       XLXI_11/Mmult__mult0003
+    SLICE_X13Y41.F3      net (fanout=1)        1.294   XLXI_11/_mult0003<10>
+    SLICE_X13Y41.COUT    Topcyf                1.162   XLXI_11/VGA_Green_add0001<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_lut<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.Y       Tciny                 0.869   XLXI_11/VGA_Green_add0001<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_xor<27>
+    SLICE_X12Y50.G3      net (fanout=1)        0.310   XLXI_11/VGA_Green_add0001<27>
+    SLICE_X12Y50.COUT    Topcyg                1.131   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_lut<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.CIN     net (fanout=1)        0.000   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.COUT    Tbyp                  0.130   XLXI_11/VGA_Green_cmp_le0000
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<10>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<11>
+    SLICE_X25Y51.G2      net (fanout=3)        1.385   XLXI_11/VGA_Green_cmp_le0000
+    SLICE_X25Y51.CLK     Tgck                  0.837   XLXI_11/VGA_Red
+                                                       XLXI_11/VGA_Red_mux00051
+                                                       XLXI_11/VGA_Red
+    -------------------------------------------------  ---------------------------
+    Total                                     20.034ns (14.158ns logic, 5.876ns route)
+                                                       (70.7% logic, 29.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -0.010ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_11/v_count_1 (FF)
+  Destination:          XLXI_11/VGA_Red (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      20.010ns (Levels of Logic = 18)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_11/v_count_1 to XLXI_11/VGA_Red
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y30.YQ      Tcko                  0.587   XLXI_11/v_count<0>
+                                                       XLXI_11/v_count_1
+    SLICE_X21Y30.G1      net (fanout=9)        1.203   XLXI_11/v_count<1>
+    SLICE_X21Y30.COUT    Topcyg                1.001   XLXI_11/_sub0001<0>
+                                                       XLXI_11/Msub__sub0001_lut<1>
+                                                       XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.COUT    Tbyp                  0.118   XLXI_11/_sub0001<2>
+                                                       XLXI_11/Msub__sub0001_cy<2>
+                                                       XLXI_11/Msub__sub0001_cy<3>
+    SLICE_X21Y32.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<3>
+    SLICE_X21Y32.Y       Tciny                 0.869   XLXI_11/_sub0001<4>
+                                                       XLXI_11/Msub__sub0001_cy<4>
+                                                       XLXI_11/Msub__sub0001_xor<5>
+    SLICE_X20Y32.G2      net (fanout=1)        0.110   XLXI_11/_sub0001<5>
+    SLICE_X20Y32.COUT    Topcyg                1.131   XLXI_11/mult0003_addsub0000<4>
+                                                       XLXI_11/_sub0001<5>_rt
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.Y       Tciny                 0.883   XLXI_11/mult0003_addsub0000<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_xor<7>
+    MULT18X18_X0Y4.B7    net (fanout=2)        1.562   XLXI_11/mult0003_addsub0000<7>
+    MULT18X18_X0Y4.P10   Tmult                 4.602   XLXI_11/Mmult__mult0003
+                                                       XLXI_11/Mmult__mult0003
+    SLICE_X13Y41.F3      net (fanout=1)        1.294   XLXI_11/_mult0003<10>
+    SLICE_X13Y41.COUT    Topcyf                1.162   XLXI_11/VGA_Green_add0001<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_lut<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<25>
+    SLICE_X13Y49.Y       Tciny                 0.869   XLXI_11/VGA_Green_add0001<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<26>
+                                                       XLXI_11/Madd_VGA_Green_add0001_xor<27>
+    SLICE_X12Y50.G3      net (fanout=1)        0.310   XLXI_11/VGA_Green_add0001<27>
+    SLICE_X12Y50.COUT    Topcyg                1.131   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_lut<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.CIN     net (fanout=1)        0.000   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.COUT    Tbyp                  0.130   XLXI_11/VGA_Green_cmp_le0000
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<10>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<11>
+    SLICE_X25Y51.G2      net (fanout=3)        1.385   XLXI_11/VGA_Green_cmp_le0000
+    SLICE_X25Y51.CLK     Tgck                  0.837   XLXI_11/VGA_Red
+                                                       XLXI_11/VGA_Red_mux00051
+                                                       XLXI_11/VGA_Red
+    -------------------------------------------------  ---------------------------
+    Total                                     20.010ns (14.146ns logic, 5.864ns route)
+                                                       (70.7% logic, 29.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.037ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_11/v_count_1 (FF)
+  Destination:          XLXI_11/VGA_Red (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.963ns (Levels of Logic = 17)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_11/v_count_1 to XLXI_11/VGA_Red
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y30.YQ      Tcko                  0.587   XLXI_11/v_count<0>
+                                                       XLXI_11/v_count_1
+    SLICE_X21Y30.G1      net (fanout=9)        1.203   XLXI_11/v_count<1>
+    SLICE_X21Y30.COUT    Topcyg                1.001   XLXI_11/_sub0001<0>
+                                                       XLXI_11/Msub__sub0001_lut<1>
+                                                       XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.CIN     net (fanout=1)        0.000   XLXI_11/Msub__sub0001_cy<1>
+    SLICE_X21Y31.Y       Tciny                 0.869   XLXI_11/_sub0001<2>
+                                                       XLXI_11/Msub__sub0001_cy<2>
+                                                       XLXI_11/Msub__sub0001_xor<3>
+    SLICE_X20Y31.G1      net (fanout=1)        0.122   XLXI_11/_sub0001<3>
+    SLICE_X20Y31.COUT    Topcyg                1.131   XLXI_11/mult0003_addsub0000<2>
+                                                       XLXI_11/_sub0001<3>_rt
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<3>
+    SLICE_X20Y32.COUT    Tbyp                  0.130   XLXI_11/mult0003_addsub0000<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<4>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.CIN     net (fanout=1)        0.000   XLXI_11/Msub_mult0003_addsub0000_cy<5>
+    SLICE_X20Y33.Y       Tciny                 0.883   XLXI_11/mult0003_addsub0000<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_cy<6>
+                                                       XLXI_11/Msub_mult0003_addsub0000_xor<7>
+    MULT18X18_X0Y4.B7    net (fanout=2)        1.562   XLXI_11/mult0003_addsub0000<7>
+    MULT18X18_X0Y4.P10   Tmult                 4.602   XLXI_11/Mmult__mult0003
+                                                       XLXI_11/Mmult__mult0003
+    SLICE_X13Y41.F3      net (fanout=1)        1.294   XLXI_11/_mult0003<10>
+    SLICE_X13Y41.COUT    Topcyf                1.162   XLXI_11/VGA_Green_add0001<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_lut<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<10>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<11>
+    SLICE_X13Y42.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<12>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<13>
+    SLICE_X13Y43.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<14>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<15>
+    SLICE_X13Y44.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<16>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<17>
+    SLICE_X13Y45.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<18>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<19>
+    SLICE_X13Y46.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<20>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<21>
+    SLICE_X13Y47.COUT    Tbyp                  0.118   XLXI_11/VGA_Green_add0001<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<22>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.CIN     net (fanout=1)        0.000   XLXI_11/Madd_VGA_Green_add0001_cy<23>
+    SLICE_X13Y48.Y       Tciny                 0.869   XLXI_11/VGA_Green_add0001<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_cy<24>
+                                                       XLXI_11/Madd_VGA_Green_add0001_xor<25>
+    SLICE_X12Y50.G2      net (fanout=1)        0.357   XLXI_11/VGA_Green_add0001<25>
+    SLICE_X12Y50.COUT    Topcyg                1.131   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_lut<9>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.CIN     net (fanout=1)        0.000   XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<9>
+    SLICE_X12Y51.COUT    Tbyp                  0.130   XLXI_11/VGA_Green_cmp_le0000
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<10>
+                                                       XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<11>
+    SLICE_X25Y51.G2      net (fanout=3)        1.385   XLXI_11/VGA_Green_cmp_le0000
+    SLICE_X25Y51.CLK     Tgck                  0.837   XLXI_11/VGA_Red
+                                                       XLXI_11/VGA_Red_mux00051
+                                                       XLXI_11/VGA_Red
+    -------------------------------------------------  ---------------------------
+    Total                                     19.963ns (14.040ns logic, 5.923ns route)
+                                                       (70.3% logic, 29.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_2/iI2C_master/sregIn_1 (SLICE_X17Y56.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.968ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               XLXI_2/iI2C_master/sregIn_0 (FF)
+  Destination:          XLXI_2/iI2C_master/sregIn_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.968ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: XLXI_2/iI2C_master/sregIn_0 to XLXI_2/iI2C_master/sregIn_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y56.YQ      Tcko                  0.470   XLXI_2/iI2C_master/sregIn<1>
+                                                       XLXI_2/iI2C_master/sregIn_0
+    SLICE_X17Y56.BX      net (fanout=2)        0.405   XLXI_2/iI2C_master/sregIn<0>
+    SLICE_X17Y56.CLK     Tckdi       (-Th)    -0.093   XLXI_2/iI2C_master/sregIn<1>
+                                                       XLXI_2/iI2C_master/sregIn_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.968ns (0.563ns logic, 0.405ns route)
+                                                       (58.2% logic, 41.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_2/iI2C_master/sregIn_3 (SLICE_X15Y56.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.976ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               XLXI_2/iI2C_master/sregIn_2 (FF)
+  Destination:          XLXI_2/iI2C_master/sregIn_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.976ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: XLXI_2/iI2C_master/sregIn_2 to XLXI_2/iI2C_master/sregIn_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y56.YQ      Tcko                  0.470   XLXI_2/iI2C_master/sregIn<3>
+                                                       XLXI_2/iI2C_master/sregIn_2
+    SLICE_X15Y56.BX      net (fanout=2)        0.413   XLXI_2/iI2C_master/sregIn<2>
+    SLICE_X15Y56.CLK     Tckdi       (-Th)    -0.093   XLXI_2/iI2C_master/sregIn<3>
+                                                       XLXI_2/iI2C_master/sregIn_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.976ns (0.563ns logic, 0.413ns route)
+                                                       (57.7% logic, 42.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_2/iI2C_master/sregIn_2 (SLICE_X15Y56.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.033ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               XLXI_2/iI2C_master/sregIn_1 (FF)
+  Destination:          XLXI_2/iI2C_master/sregIn_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.040ns (Levels of Logic = 0)
+  Clock Path Skew:      0.007ns (0.022 - 0.015)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: XLXI_2/iI2C_master/sregIn_1 to XLXI_2/iI2C_master/sregIn_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y56.XQ      Tcko                  0.473   XLXI_2/iI2C_master/sregIn<1>
+                                                       XLXI_2/iI2C_master/sregIn_1
+    SLICE_X15Y56.BY      net (fanout=2)        0.432   XLXI_2/iI2C_master/sregIn<1>
+    SLICE_X15Y56.CLK     Tckdi       (-Th)    -0.135   XLXI_2/iI2C_master/sregIn<3>
+                                                       XLXI_2/iI2C_master/sregIn_2
+    -------------------------------------------------  ---------------------------
+    Total                                      1.040ns (0.608ns logic, 0.432ns route)
+                                                       (58.5% logic, 41.5% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.826ns (Tcl)
+  Physical resource: XLXI_2/iI2C_master/sregOut<1>/CLK
+  Logical resource: XLXI_2/iI2C_master/sregOut_1/CK
+  Location pin: SLICE_X12Y60.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.826ns (Tch)
+  Physical resource: XLXI_2/iI2C_master/sregOut<1>/CLK
+  Logical resource: XLXI_2/iI2C_master/sregOut_1/CK
+  Location pin: SLICE_X12Y60.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.652ns (605.327MHz) (Tcp)
+  Physical resource: XLXI_2/iI2C_master/sregOut<1>/CLK
+  Logical resource: XLXI_2/iI2C_master/sregOut_1/CK
+  Location pin: SLICE_X12Y60.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+1 constraint not met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   21.096|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 3  Score: 1171  (Setup/Max: 1171, Hold: 0)
+
+Constraints cover 11321785 paths, 0 nets, and 2214 connections
+
+Design statistics:
+   Minimum period:  21.096ns{1}   (Maximum frequency:  47.402MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Fri May 24 12:54:10 2024 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4528 MB
+
+
+

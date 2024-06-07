@@ -1,0 +1,579 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: schemat.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "schemat.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "schemat"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : schemat
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"../../../Downloads/AccelADXL345 (1)" "../LCD1x64 (7)"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/lab/Desktop/KJKW/testVGA/vgatest1.vhd" in Library work.
+Entity <vga_controller> compiled.
+Entity <vga_controller> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Users/lab/Desktop/KJKW/testVGA/schemat.vhf" in Library work.
+Architecture behavioral of Entity schemat is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <schemat> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <VGA_Controller> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <schemat> in library <work> (Architecture <behavioral>).
+WARNING:Xst:753 - "C:/Users/lab/Desktop/KJKW/testVGA/schemat.vhf" line 96: Unconnected output port 'Z' of component 'AccelADXL345'.
+WARNING:Xst:753 - "C:/Users/lab/Desktop/KJKW/testVGA/schemat.vhf" line 96: Unconnected output port 'I2C_NACK' of component 'AccelADXL345'.
+WARNING:Xst:2211 - "C:/Users/lab/Desktop/KJKW/testVGA/schemat.vhf" line 96: Instantiating black box module <AccelADXL345>.
+WARNING:Xst:2211 - "C:/Users/lab/Desktop/KJKW/testVGA/schemat.vhf" line 109: Instantiating black box module <LCD1x64>.
+Entity <schemat> analyzed. Unit <schemat> generated.
+
+Analyzing Entity <VGA_Controller> in library <work> (Architecture <behavioral>).
+INFO:Xst:2679 - Register <DataRate> in unit <VGA_Controller> has a constant value of 0111 during circuit operation. The register is replaced by logic.
+Entity <VGA_Controller> analyzed. Unit <VGA_Controller> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <VGA_Controller>.
+    Related source file is "C:/Users/lab/Desktop/KJKW/testVGA/vgatest1.vhd".
+WARNING:Xst:647 - Input <NewData> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:643 - "C:/Users/lab/Desktop/KJKW/testVGA/vgatest1.vhd" line 73: The result of a 18x18-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "C:/Users/lab/Desktop/KJKW/testVGA/vgatest1.vhd" line 73: The result of a 18x18-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 64-bit register for signal <Line>.
+    Found 1-bit register for signal <VGA_Blue>.
+    Found 1-bit register for signal <VGA_Red>.
+    Found 1-bit register for signal <VGA_Green>.
+    Found 10x10-bit multiplier for signal <$mult0000> created at line 88.
+    Found 11x11-bit multiplier for signal <$mult0001> created at line 88.
+    Found 18x18-bit multiplier for signal <$mult0002> created at line 73.
+    Found 18x18-bit multiplier for signal <$mult0003> created at line 73.
+    Found 17-bit subtractor for signal <$sub0000> created at line 73.
+    Found 17-bit subtractor for signal <$sub0001> created at line 73.
+    Found 11-bit up counter for signal <h_count>.
+    Found 10-bit subtractor for signal <mult0000$addsub0000> created at line 88.
+    Found 11-bit subtractor for signal <mult0001$addsub0000> created at line 88.
+    Found 18-bit subtractor for signal <mult0002$addsub0000> created at line 73.
+    Found 18-bit subtractor for signal <mult0003$addsub0000> created at line 73.
+    Found 10-bit up counter for signal <v_count>.
+    Found 11-bit comparator greatequal for signal <v_count$cmp_ge0000> created at line 37.
+    Found 10-bit comparator greatequal for signal <v_count$cmp_ge0001> created at line 40.
+    Found 11-bit comparator greatequal for signal <VGA_Blue$cmp_ge0000> created at line 81.
+    Found 10-bit comparator greatequal for signal <VGA_Blue$cmp_ge0001> created at line 81.
+    Found 11-bit comparator lessequal for signal <VGA_Blue$cmp_le0000> created at line 81.
+    Found 10-bit comparator lessequal for signal <VGA_Blue$cmp_le0001> created at line 81.
+    Found 23-bit adder for signal <VGA_Green$add0000> created at line 88.
+    Found 32-bit adder for signal <VGA_Green$add0001> created at line 73.
+    Found 23-bit comparator greater for signal <VGA_Green$cmp_gt0000> created at line 88.
+    Found 23-bit comparator greater for signal <VGA_Green$cmp_gt0001> created at line 98.
+    Found 32-bit comparator lessequal for signal <VGA_Green$cmp_le0000> created at line 88.
+    Found 23-bit comparator less for signal <VGA_Green$cmp_lt0000> created at line 93.
+    Found 11-bit comparator greatequal for signal <VGA_HSync$cmp_ge0000> created at line 49.
+    Found 11-bit comparator less for signal <VGA_HSync$cmp_lt0000> created at line 49.
+    Found 10-bit comparator greatequal for signal <VGA_VSync$cmp_ge0000> created at line 58.
+    Found 10-bit comparator less for signal <VGA_VSync$cmp_lt0000> created at line 58.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  67 D-type flip-flop(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred   4 Multiplier(s).
+	inferred  14 Comparator(s).
+Unit <VGA_Controller> synthesized.
+
+
+Synthesizing Unit <schemat>.
+    Related source file is "C:/Users/lab/Desktop/KJKW/testVGA/schemat.vhf".
+Unit <schemat> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 4
+ 10x10-bit multiplier                                  : 1
+ 11x11-bit multiplier                                  : 1
+ 18x18-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 8
+ 10-bit subtractor                                     : 1
+ 11-bit subtractor                                     : 1
+ 17-bit subtractor                                     : 2
+ 18-bit subtractor                                     : 2
+ 23-bit adder                                          : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 2
+ 10-bit up counter                                     : 1
+ 11-bit up counter                                     : 1
+# Registers                                            : 4
+ 1-bit register                                        : 3
+ 64-bit register                                       : 1
+# Comparators                                          : 14
+ 10-bit comparator greatequal                          : 3
+ 10-bit comparator less                                : 1
+ 10-bit comparator lessequal                           : 1
+ 11-bit comparator greatequal                          : 3
+ 11-bit comparator less                                : 1
+ 11-bit comparator lessequal                           : 1
+ 23-bit comparator greater                             : 2
+ 23-bit comparator less                                : 1
+ 32-bit comparator lessequal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <../../../Downloads/AccelADXL345 (1)/AccelADXL345.ngc>.
+Reading core <../LCD1x64 (7)/LCD1x64.ngc>.
+Loading core <AccelADXL345> for timing and area information for instance <XLXI_2>.
+Loading core <LCD1x64> for timing and area information for instance <XLXI_9>.
+INFO:Xst:2261 - The FF/Latch <Line_26> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_42> 
+INFO:Xst:2261 - The FF/Latch <Line_27> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_43> 
+INFO:Xst:2261 - The FF/Latch <Line_28> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_44> 
+INFO:Xst:2261 - The FF/Latch <Line_29> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_45> 
+INFO:Xst:2261 - The FF/Latch <Line_30> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_46> 
+INFO:Xst:2261 - The FF/Latch <Line_31> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_47> 
+INFO:Xst:2261 - The FF/Latch <Line_16> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_32> 
+INFO:Xst:2261 - The FF/Latch <Line_17> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_33> 
+INFO:Xst:2261 - The FF/Latch <Line_18> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_34> 
+INFO:Xst:2261 - The FF/Latch <Line_19> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_35> 
+INFO:Xst:2261 - The FF/Latch <Line_20> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_36> 
+INFO:Xst:2261 - The FF/Latch <Line_21> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_37> 
+INFO:Xst:2261 - The FF/Latch <Line_22> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_38> 
+INFO:Xst:2261 - The FF/Latch <Line_23> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_39> 
+INFO:Xst:2261 - The FF/Latch <Line_24> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_40> 
+INFO:Xst:2261 - The FF/Latch <Line_25> in Unit <XLXI_11> is equivalent to the following FF/Latch, which will be removed : <Line_41> 
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 4
+ 10x10-bit multiplier                                  : 1
+ 11x11-bit multiplier                                  : 1
+ 18x18-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 8
+ 10-bit subtractor                                     : 1
+ 11-bit subtractor                                     : 1
+ 17-bit subtractor                                     : 2
+ 18-bit subtractor                                     : 2
+ 23-bit adder                                          : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 2
+ 10-bit up counter                                     : 1
+ 11-bit up counter                                     : 1
+# Registers                                            : 67
+ Flip-Flops                                            : 67
+# Comparators                                          : 14
+ 10-bit comparator greatequal                          : 3
+ 10-bit comparator less                                : 1
+ 10-bit comparator lessequal                           : 1
+ 11-bit comparator greatequal                          : 3
+ 11-bit comparator less                                : 1
+ 11-bit comparator lessequal                           : 1
+ 23-bit comparator greater                             : 2
+ 23-bit comparator less                                : 1
+ 32-bit comparator lessequal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <Line_26> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_42> 
+INFO:Xst:2261 - The FF/Latch <Line_27> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_43> 
+INFO:Xst:2261 - The FF/Latch <Line_28> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_44> 
+INFO:Xst:2261 - The FF/Latch <Line_29> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_45> 
+INFO:Xst:2261 - The FF/Latch <Line_30> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_46> 
+INFO:Xst:2261 - The FF/Latch <Line_31> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_47> 
+INFO:Xst:2261 - The FF/Latch <Line_16> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_32> 
+INFO:Xst:2261 - The FF/Latch <Line_17> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_33> 
+INFO:Xst:2261 - The FF/Latch <Line_18> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_34> 
+INFO:Xst:2261 - The FF/Latch <Line_19> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_35> 
+INFO:Xst:2261 - The FF/Latch <Line_20> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_36> 
+INFO:Xst:2261 - The FF/Latch <Line_21> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_37> 
+INFO:Xst:2261 - The FF/Latch <Line_22> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_38> 
+INFO:Xst:2261 - The FF/Latch <Line_23> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_39> 
+INFO:Xst:2261 - The FF/Latch <Line_24> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_40> 
+INFO:Xst:2261 - The FF/Latch <Line_25> in Unit <VGA_Controller> is equivalent to the following FF/Latch, which will be removed : <Line_41> 
+
+Optimizing unit <schemat> ...
+
+Optimizing unit <VGA_Controller> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block schemat, actual ratio is 8.
+INFO:Xst:2260 - The FF/Latch <iAccCtrl/state_FSM_FFd14> in Unit <XLXI_2> is equivalent to the following FF/Latch : <iI2C_master/state_FSM_FFd6> 
+INFO:Xst:2260 - The FF/Latch <cntDigit_0> in Unit <XLXI_9> is equivalent to the following 4 FFs/Latches : <cntDigit_0_1> <cntDigit_0_2> <cntDigit_0_3> <cntDigit_0_4> 
+INFO:Xst:2260 - The FF/Latch <cntDigit_1> in Unit <XLXI_9> is equivalent to the following 2 FFs/Latches : <cntDigit_1_1> <cntDigit_1_2> 
+INFO:Xst:2260 - The FF/Latch <State_16> in Unit <XLXI_9> is equivalent to the following FF/Latch : <State_16_1> 
+INFO:Xst:2260 - The FF/Latch <iAccCtrl/state_FSM_FFd14> in Unit <XLXI_2> is equivalent to the following FF/Latch : <iI2C_master/state_FSM_FFd6> 
+INFO:Xst:2260 - The FF/Latch <cntDigit_0> in Unit <XLXI_9> is equivalent to the following 4 FFs/Latches : <cntDigit_0_1> <cntDigit_0_2> <cntDigit_0_3> <cntDigit_0_4> 
+INFO:Xst:2260 - The FF/Latch <cntDigit_1> in Unit <XLXI_9> is equivalent to the following 2 FFs/Latches : <cntDigit_1_1> <cntDigit_1_2> 
+INFO:Xst:2260 - The FF/Latch <State_16> in Unit <XLXI_9> is equivalent to the following FF/Latch : <State_16_1> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 72
+ Flip-Flops                                            : 72
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : schemat.ngr
+Top Level Output File Name         : schemat
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 34
+
+Cell Usage :
+# BELS                             : 1052
+#      GND                         : 3
+#      INV                         : 62
+#      LUT1                        : 71
+#      LUT2                        : 149
+#      LUT2_D                      : 2
+#      LUT2_L                      : 7
+#      LUT3                        : 104
+#      LUT3_D                      : 5
+#      LUT3_L                      : 5
+#      LUT4                        : 165
+#      LUT4_D                      : 9
+#      LUT4_L                      : 19
+#      MUXCY                       : 222
+#      MUXF5                       : 35
+#      MUXF6                       : 10
+#      MUXF7                       : 5
+#      VCC                         : 3
+#      XORCY                       : 176
+# FlipFlops/Latches                : 279
+#      FDE                         : 128
+#      FDR                         : 85
+#      FDRE                        : 30
+#      FDRS                        : 15
+#      FDRSE                       : 3
+#      FDS                         : 18
+# RAMS                             : 8
+#      RAM16X1D                    : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 33
+#      IBUF                        : 18
+#      IOBUF                       : 6
+#      OBUF                        : 9
+# MULTs                            : 4
+#      MULT18X18SIO                : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      379  out of   4656     8%  
+ Number of Slice Flip Flops:            279  out of   9312     2%  
+ Number of 4 input LUTs:                614  out of   9312     6%  
+    Number used as logic:               598
+    Number used as RAMs:                 16
+ Number of IOs:                          34
+ Number of bonded IOBs:                  34  out of    232    14%  
+ Number of MULT18X18SIOs:                 4  out of     20    20%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 287   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 20.261ns (Maximum Frequency: 49.356MHz)
+   Minimum input arrival time before clock: 6.790ns
+   Maximum output required time after clock: 8.637ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 20.261ns (frequency: 49.356MHz)
+  Total number of paths / destination ports: 11321887 / 547
+-------------------------------------------------------------------------
+Delay:               20.261ns (Levels of Logic = 38)
+  Source:            XLXI_11/h_count_1 (FF)
+  Destination:       XLXI_11/VGA_Red (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: XLXI_11/h_count_1 to XLXI_11/VGA_Red
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             10   0.591   0.961  XLXI_11/h_count_1 (XLXI_11/h_count_1)
+     LUT2:I1->O            1   0.704   0.000  XLXI_11/Msub__sub0000_lut<1> (XLXI_11/Msub__sub0000_lut<1>)
+     MUXCY:S->O            1   0.464   0.000  XLXI_11/Msub__sub0000_cy<1> (XLXI_11/Msub__sub0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub__sub0000_cy<2> (XLXI_11/Msub__sub0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub__sub0000_cy<3> (XLXI_11/Msub__sub0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub__sub0000_cy<4> (XLXI_11/Msub__sub0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub__sub0000_cy<5> (XLXI_11/Msub__sub0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub__sub0000_cy<6> (XLXI_11/Msub__sub0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub__sub0000_cy<7> (XLXI_11/Msub__sub0000_cy<7>)
+     XORCY:CI->O           1   0.804   0.595  XLXI_11/Msub__sub0000_xor<8> (XLXI_11/_sub0000<8>)
+     LUT1:I0->O            1   0.704   0.000  XLXI_11/Msub_mult0002_addsub0000_cy<8>_rt (XLXI_11/Msub_mult0002_addsub0000_cy<8>_rt)
+     MUXCY:S->O            1   0.464   0.000  XLXI_11/Msub_mult0002_addsub0000_cy<8> (XLXI_11/Msub_mult0002_addsub0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub_mult0002_addsub0000_cy<9> (XLXI_11/Msub_mult0002_addsub0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub_mult0002_addsub0000_cy<10> (XLXI_11/Msub_mult0002_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub_mult0002_addsub0000_cy<11> (XLXI_11/Msub_mult0002_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub_mult0002_addsub0000_cy<12> (XLXI_11/Msub_mult0002_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub_mult0002_addsub0000_cy<13> (XLXI_11/Msub_mult0002_addsub0000_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub_mult0002_addsub0000_cy<14> (XLXI_11/Msub_mult0002_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Msub_mult0002_addsub0000_cy<15> (XLXI_11/Msub_mult0002_addsub0000_cy<15>)
+     MUXCY:CI->O           0   0.059   0.000  XLXI_11/Msub_mult0002_addsub0000_cy<16> (XLXI_11/Msub_mult0002_addsub0000_cy<16>)
+     XORCY:CI->O           2   0.804   0.447  XLXI_11/Msub_mult0002_addsub0000_xor<17> (XLXI_11/mult0002_addsub0000<17>)
+     MULT18X18SIO:A17->P17    1   4.873   0.595  XLXI_11/Mmult__mult0002 (XLXI_11/_mult0002<17>)
+     LUT2:I0->O            1   0.704   0.000  XLXI_11/Madd_VGA_Green_add0001_lut<17> (XLXI_11/Madd_VGA_Green_add0001_lut<17>)
+     MUXCY:S->O            1   0.464   0.000  XLXI_11/Madd_VGA_Green_add0001_cy<17> (XLXI_11/Madd_VGA_Green_add0001_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Madd_VGA_Green_add0001_cy<18> (XLXI_11/Madd_VGA_Green_add0001_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Madd_VGA_Green_add0001_cy<19> (XLXI_11/Madd_VGA_Green_add0001_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Madd_VGA_Green_add0001_cy<20> (XLXI_11/Madd_VGA_Green_add0001_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Madd_VGA_Green_add0001_cy<21> (XLXI_11/Madd_VGA_Green_add0001_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Madd_VGA_Green_add0001_cy<22> (XLXI_11/Madd_VGA_Green_add0001_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Madd_VGA_Green_add0001_cy<23> (XLXI_11/Madd_VGA_Green_add0001_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Madd_VGA_Green_add0001_cy<24> (XLXI_11/Madd_VGA_Green_add0001_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Madd_VGA_Green_add0001_cy<25> (XLXI_11/Madd_VGA_Green_add0001_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Madd_VGA_Green_add0001_cy<26> (XLXI_11/Madd_VGA_Green_add0001_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Madd_VGA_Green_add0001_cy<27> (XLXI_11/Madd_VGA_Green_add0001_cy<27>)
+     XORCY:CI->O           1   0.804   0.595  XLXI_11/Madd_VGA_Green_add0001_xor<28> (XLXI_11/VGA_Green_add0001<28>)
+     LUT3:I0->O            1   0.704   0.000  XLXI_11/Mcompar_VGA_Green_cmp_le0000_lut<10> (XLXI_11/Mcompar_VGA_Green_cmp_le0000_lut<10>)
+     MUXCY:S->O            1   0.464   0.000  XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<10> (XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<10>)
+     MUXCY:CI->O           3   0.459   0.610  XLXI_11/Mcompar_VGA_Green_cmp_le0000_cy<11> (XLXI_11/VGA_Green_cmp_le0000)
+     LUT3:I1->O            1   0.704   0.420  XLXI_11/VGA_Red_or00001 (XLXI_11/VGA_Red_or0000)
+     FDS:S                     0.911          XLXI_11/VGA_Red
+    ----------------------------------------
+    Total                     20.261ns (16.038ns logic, 4.223ns route)
+                                       (79.2% logic, 20.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 249 / 142
+-------------------------------------------------------------------------
+Offset:              6.790ns (Levels of Logic = 8)
+  Source:            Blank<1> (PAD)
+  Destination:       XLXI_9/regDI_2 (FF)
+  Destination Clock: clk rising
+
+  Data Path: Blank<1> to XLXI_9/regDI_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.622  Blank_1_IBUF (Blank_1_IBUF)
+     begin scope: 'XLXI_9'
+     LUT3:I0->O            1   0.704   0.000  Mmux_Blank_mux0000_8 (Mmux_Blank_mux0000_8)
+     MUXF5:I0->O           1   0.321   0.000  Mmux_Blank_mux0000_6_f5 (Mmux_Blank_mux0000_6_f5)
+     MUXF6:I0->O           1   0.521   0.000  Mmux_Blank_mux0000_4_f6 (Mmux_Blank_mux0000_4_f6)
+     MUXF7:I0->O           7   0.521   0.743  Mmux_Blank_mux0000_2_f7 (Blank_mux0000)
+     LUT3:I2->O            1   0.704   0.424  regDI_mux0001<5>112 (regDI_mux0001<5>112)
+     LUT4:I3->O            1   0.704   0.000  regDI_mux0001<5>1221 (regDI_mux0001<5>122)
+     FDS:D                     0.308          regDI_2
+    ----------------------------------------
+    Total                      6.790ns (5.001ns logic, 1.789ns route)
+                                       (73.7% logic, 26.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 67 / 14
+-------------------------------------------------------------------------
+Offset:              8.637ns (Levels of Logic = 9)
+  Source:            XLXI_11/h_count_4 (FF)
+  Destination:       VGA_HSync (PAD)
+  Source Clock:      clk rising
+
+  Data Path: XLXI_11/h_count_4 to VGA_HSync
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             15   0.591   1.192  XLXI_11/h_count_4 (XLXI_11/h_count_4)
+     LUT1:I0->O            1   0.704   0.000  XLXI_11/Mcompar_v_count_cmp_ge0000_cy<2>_rt (XLXI_11/Mcompar_v_count_cmp_ge0000_cy<2>_rt)
+     MUXCY:S->O            1   0.464   0.000  XLXI_11/Mcompar_v_count_cmp_ge0000_cy<2> (XLXI_11/Mcompar_v_count_cmp_ge0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Mcompar_v_count_cmp_ge0000_cy<3> (XLXI_11/Mcompar_v_count_cmp_ge0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Mcompar_v_count_cmp_ge0000_cy<4> (XLXI_11/Mcompar_v_count_cmp_ge0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Mcompar_v_count_cmp_ge0000_cy<5> (XLXI_11/Mcompar_v_count_cmp_ge0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_11/Mcompar_v_count_cmp_ge0000_cy<6> (XLXI_11/Mcompar_v_count_cmp_ge0000_cy<6>)
+     MUXCY:CI->O           1   0.459   0.595  XLXI_11/Mcompar_v_count_cmp_ge0000_cy<7> (XLXI_11/VGA_HSync_cmp_ge0000)
+     LUT2:I0->O            1   0.704   0.420  XLXI_11/VGA_HSync1 (VGA_HSync_OBUF)
+     OBUF:I->O                 3.272          VGA_HSync_OBUF (VGA_HSync)
+    ----------------------------------------
+    Total                      8.637ns (6.430ns logic, 2.207ns route)
+                                       (74.4% logic, 25.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.06 secs
+ 
+--> 
+
+Total memory usage is 4532248 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
+Number of infos    :   41 (   0 filtered)
+

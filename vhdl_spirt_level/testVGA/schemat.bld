@@ -1,0 +1,56 @@
+Release 14.7 ngdbuild P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -sd ../../../Downloads/AccelADXL345 (1) -sd ../LCD1x64
+(7) -nt timestamp -uc C:/Users/lab/Downloads/GenIO/GenIO.ucf -uc
+C:/Users/lab/Desktop/Accel_J4.ucf -uc C:/Users/lab/Desktop/KJKW/LCD.ucf -p
+xc3s500e-fg320-4 schemat.ngc schemat.ngd
+
+Reading NGO file "C:/Users/lab/Desktop/KJKW/testVGA/schemat.ngc" ...
+Loading design module "../../../Downloads/AccelADXL345 (1)/AccelADXL345.ngc"...
+Loading design module "../LCD1x64 (7)/LCD1x64.ngc"...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file
+"C:/Users/lab/Downloads/GenIO/GenIO.ucf" ...
+Annotating constraints to design from ucf file
+"C:/Users/lab/Desktop/Accel_J4.ucf" ...
+Annotating constraints to design from ucf file
+"C:/Users/lab/Desktop/KJKW/LCD.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem - The Period constraint <NET "clk" PERIOD = 20.0ns HIGH
+   50%;> [C:/Users/lab/Downloads/GenIO/GenIO.ucf(3)], is specified using the Net
+   Period method which is not recommended. Please use the Timespec PERIOD
+   method.
+
+Done...
+
+Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'N35' has no driver
+WARNING:NgdBuild:452 - logical net 'N36' has no driver
+WARNING:NgdBuild:452 - logical net 'N37' has no driver
+WARNING:NgdBuild:452 - logical net 'N38' has no driver
+WARNING:NgdBuild:452 - logical net 'N39' has no driver
+WARNING:NgdBuild:452 - logical net 'N40' has no driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   6
+
+Total memory usage is 4398732 kilobytes
+
+Writing NGD file "schemat.ngd" ...
+Total REAL time to NGDBUILD completion:  2 sec
+Total CPU time to NGDBUILD completion:   2 sec
+
+Writing NGDBUILD log file "schemat.bld"...

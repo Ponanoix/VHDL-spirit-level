@@ -1,0 +1,9 @@
+AR vga_controller arch C:/Users/lab/Desktop/KJKW/testVGA/vgatest1.vhd sub00/vhpl06 1712914396
+EN fsm_sync NULL C:/Users/lab/Desktop/KJKW/testVGA/FSM_Sync.vhd sub00/vhpl02 1712914391
+EN vga_display NULL C:/Users/lab/Desktop/KJKW/testVGA/VGD_Display.vhd sub00/vhpl04 1712914393
+AR fsm_sync arch C:/Users/lab/Desktop/KJKW/testVGA/FSM_Sync.vhd sub00/vhpl03 1712914392
+AR vga_display arch C:/Users/lab/Desktop/KJKW/testVGA/VGD_Display.vhd sub00/vhpl05 1712914394
+AR vga_controller behavioral C:/Users/lab/Desktop/KJKW/testVGA/vgatest1.vhd sub00/vhpl01 1716547998
+EN schemat NULL C:/Users/lab/Desktop/KJKW/testVGA/schemat.vhf sub00/vhpl07 1716547999
+EN vga_controller NULL C:/Users/lab/Desktop/KJKW/testVGA/vgatest1.vhd sub00/vhpl00 1716547997
+AR schemat behavioral C:/Users/lab/Desktop/KJKW/testVGA/schemat.vhf sub00/vhpl08 1716548000

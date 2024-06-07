@@ -1,0 +1,16 @@
+[Inputs]
+clk
+NewData
+Reset
+=X[15:0]=
+=Y[15:0]=
+=Blank[15:0]=
+[Outputs]
+VGA_HSync
+VGA_VSync
+VGA_Red
+VGA_Green
+VGA_Blue
+=DataRate[3:0]=
+=Line[63:0]=
+[BiDir]
