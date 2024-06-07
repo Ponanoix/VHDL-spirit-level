@@ -8,7 +8,7 @@ In order for this program to work properly, one has to be in possession of the f
 - Spartan-3E Starter Board
 - ADXL345 accelerometer
 - Two monitors:
- - one for regular uses, in this case, to display the app's contents and turn it on/off
- - another one for the display of the spirit level itself. This monitor should preferably have a resolution of 600x800
+  - one for regular uses, in this case, to display the app's contents and turn it on/off
+  - another one for the display of the spirit level itself. This monitor should preferably have a resolution of 600x800
 
 After loading the project in the IDE, one should use built-in iMPACT tool to program the board and display everything on the second monitor
